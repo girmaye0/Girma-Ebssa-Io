@@ -1,0 +1,66 @@
+
+body {
+    background-color: rgb(142, 142, 158);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-left: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-right: 60px;
+    /* text-align: center; */
+    /* display: flex; */
+  }
+  .wrapper { 
+    margin: auto;
+    width: 1000px;
+  }
+.img-coding { 
+width: 400px;
+height: 200px;
+}
+
+h1 { 
+    font-size: 20px;
+    color: green;
+}
+
+nav ul li { 
+    display: inline;
+    color: lightblue;
+    font-size: 25px;
+    margin-inline: 30px;
+}
+
+#about, #experience, #connect { 
+    margin: 20px;
+    padding: 20px;
+}
+#Experience ul li { 
+    font-weight: bold;
+    color: aqua;
+}
+p { 
+   text-align: justify;
+}
+#Connect ul li { 
+    display: inline;
+    margin-inline: 30px;
+}
+.linkedin-logo { 
+    width: 40px;
+    height: 40px;
+}
+.github-logo { 
+    width: 40px;
+    height: 40px;
+}
+.twitter-logo { 
+    width: 40px;
+    height: 40px;
+}
+ul { 
+   list-style-type: none; 
+}
