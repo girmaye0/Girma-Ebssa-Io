@@ -1,6 +1,18 @@
 
+html { 
+    scroll-behavior: smooth;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
 body {
-    background-color: rgb(142, 142, 158);
+    /*background-color: rgb(142, 142, 158);*/
+    background: linear-gradient(to top, #a8c9e2, #f0f9ff);
     color: white;
     justify-content: center;
     align-items: center;
@@ -10,57 +22,96 @@ body {
     padding-top: 100px;
     padding-bottom: 50px;
     padding-right: 60px;
-    /* text-align: center; */
-    /* display: flex; */
+    font-family: Roboto;
+   
   }
-  .wrapper { 
-    margin: auto;
-    width: 1000px;
-  }
-.img-coding { 
-width: 400px;
-height: 200px;
+   
+  #About {
+    text-align: center;
+}
+
+.image-container {
+    width: 650px; 
+    height: 250px; 
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 h1 { 
     font-size: 20px;
     color: green;
+    font-weight: bold;
 }
 
 nav ul li { 
-    display: inline;
+    display:inline-flex;
     color: lightblue;
     font-size: 25px;
-    margin-inline: 30px;
+    margin-inline: 90px;
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    background-color: #fff; 
+    box-shadow:navajowhite rgba(110, 230, 13, 0.1);
+    border-radius: 30%;
+    text-decoration: none;
 }
 
-#about, #experience, #connect { 
-    margin: 20px;
-    padding: 20px;
-}
-#Experience ul li { 
+   #skills, #projects { 
+    color: black;
+} 
+.Experience { 
     font-weight: bold;
     color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+}
+.job { 
+    display: contents;
+}
+.job-title { 
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.job-description { 
+    text-align: left;
+}
+
+.job-date { 
+    text-align: right;
+    color: green;
 }
 p { 
    text-align: justify;
 }
-#Connect ul li { 
-    display: inline;
-    margin-inline: 30px;
-}
-.linkedin-logo { 
-    width: 40px;
-    height: 40px;
-}
-.github-logo { 
-    width: 40px;
-    height: 40px;
-}
-.twitter-logo { 
-    width: 40px;
-    height: 40px;
-}
-ul { 
-   list-style-type: none; 
-}
+
+#Connect {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  
+  .social-icons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin:0;
+  }
+  
+  .social-icons li {
+    margin: 100px; 
+  }
+  
+  .social-icons img {
+    width: 30px; 
+    height: 30px;
+  }
+
