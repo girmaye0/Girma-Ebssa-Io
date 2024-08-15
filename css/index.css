@@ -1,13 +1,33 @@
-
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 16px; /* Adjust base font size */
+    line-height: 1.5; /* Improve readability */
+  }
+  
+  /* Desktop first layout*/
 html { 
     scroll-behavior: smooth;
 }
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
+
+.header {
+    padding: 40px;
+    text-align: center;
+    background: gold;
+    margin: 30px;
+    font-size: 20px;
+  }
+ 
+#skills ul {
+    padding-left: 10px;
+    background-color: white;
+  }
+
+   #About h2 {
+    font-size: 6rem; 
+    font-style: italic; 
+    color: green;
   }
 
 body {
@@ -52,16 +72,19 @@ h1 {
 
 nav ul li { 
     display:inline-flex;
-    color: lightblue;
+    color: rgb(141, 145, 141);
     font-size: 25px;
     margin-inline: 90px;
     position: sticky;
     top: 0;
     font-weight: bold;
-    background-color: #fff; 
-    box-shadow:navajowhite rgba(110, 230, 13, 0.1);
+    background-color: gold; 
+    box-shadow:goldenrod rgba(110, 230, 1);
     border-radius: 30%;
     text-decoration: none;
+}
+nav {
+    color: green;
 }
 
    #skills, #projects { 
@@ -69,10 +92,11 @@ nav ul li {
 } 
 .Experience { 
     font-weight: bold;
-    color: aqua;
+    color: green;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 10px;
+    padding-top: 10px;
 }
 .job { 
     display: contents;
@@ -91,6 +115,7 @@ nav ul li {
 }
 p { 
    text-align: justify;
+   color: goldenrod;
 }
 
 #Connect {
@@ -114,4 +139,52 @@ p {
     width: 30px; 
     height: 30px;
   }
+  
 
+  
+  /* Styles for tablets and smaller */
+@media (max-width: 768px) {
+    
+    .header {
+        padding: 40px;
+        text-align: center;
+        background: red;
+        margin: 30px;
+        font-size: 15px;
+      }
+    
+  
+    #skills ul {
+        padding-left: 10px;
+        background-color: green;
+      }
+  
+    #About h2 {
+        font-size: 4rem; 
+        font-style: italic; 
+        color: yellow;
+      }
+  
+    }
+  /* Styles for mobile layout */
+  @media (max-width: 480px) {
+    
+    .header {
+        padding: 40px;
+        text-align: center;
+        background: darkblue;
+        margin: 30px;
+        font-size: 10px;
+      }
+    
+      #skills ul {
+        padding-left: 10px;
+        background-color: gold;
+      }
+    
+      #About h2 {
+        font-size: 2rem; 
+        font-style: italic; 
+        color: red;
+      }
+  }
