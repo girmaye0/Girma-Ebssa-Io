@@ -1,6 +1,5 @@
 const body = document.querySelector('body');
 const footer = document.createElement('footer');
-footer.textContent = 'Copyright';
 body.appendChild(footer);
 
 const today = new Date();
@@ -27,13 +26,10 @@ const messageForm = document.querySelector('form[name="leave_message"]');
 messageForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
 
- 
-  // Get form field values
-  const userName = event.target.usersName.value;
+   const userName = event.target.usersName.value;
   const userEmail = event.target.usersEmail.value;
   const userMessage = event.target.usersMessage.value;
 
-  // Log the values to the console
   console.log(`Name: ${userName}`);
   console.log(`Email: ${userEmail}`);
   console.log(`Message: ${userMessage}`);
@@ -45,33 +41,24 @@ messageForm.addEventListener('submit', (event) => {
   newMessage.innerHTML   
  = `<a href="mailto:${userEmail}">${userName}</a><span>${userMessage}</span>`;   
 
-
-  // Create a remove button
   const removeButton = document.createElement('button');
   removeButton.textContent = 'Remove';
   removeButton.type = 'button';
 
-
-  // Add a click event listener to the remove button
   removeButton.addEventListener('click', () => {
     const entry = removeButton.parentNode;
     entry.remove();
   });
 
-  // Append the remove button to the new message
   newMessage.appendChild(removeButton);
 
-  // Append the new message to the message list
   messageList.appendChild(newMessage);
 
-
-  // Create an edit button
   const editButton = document.createElement('button');
   editButton.textContent = 'Edit';
   editButton.type = 'button';
 
-  // Add a click event listener to the edit button
-  editButton.addEventListener('click', () => {
+    editButton.addEventListener('click', () => {
     const entry = editButton.parentNode;
     const messageSpan = entry.querySelector('span');
     const editInput = document.createElement('input');
@@ -86,17 +73,32 @@ messageForm.addEventListener('submit', (event) => {
     });
   });
 
-  // Append the edit button to the new message
   newMessage.appendChild(editButton);
 
-  // Append the new message to the message list
   messageList.appendChild(newMessage);
 
-  // Hide the message section if the list is empty
-  messageSection.style.display = messageList.children.length === 0 ? 'none' : 'block';
-
-  // Clear the form
+    // Clear the form
   messageForm.reset();
 });
 
- 
+
+fetch(`https://api.github.com/users/girmaye0/repos`)
+  .then(response => response.json())  // Parse response to JSON
+  .then(repositories => {
+    console.log(repositories);  // Log repositories for verification
+   
+    const projectSection = document.getElementById('projects');
+    const projectList = projectSection.querySelector('ul');
+    // Display repositories in a list
+    for (const repo of repositories) {
+      const project = document.createElement('li');
+      project.innerText = repo.name;
+      projectList.append(project);
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching repositories:', error);
+    // Handle errors here, e.g., display an error message to the user
+    projectSection.textContent = 'Failed to load projects.';
+  });
+  
