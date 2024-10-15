@@ -81,7 +81,6 @@ messageForm.addEventListener('submit', (event) => {
   messageForm.reset();
 });
 
-
 fetch(`https://api.github.com/users/girmaye0/repos`)
   .then(response => response.json())  // Parse response to JSON
   .then(repositories => {
